@@ -1,0 +1,115 @@
+
+======================================================================
+SOC-AI-HUNT
+HUNT #1 — CREDENTIAL ABUSE INVESTIGATION
+======================================================================
+
+Generated: 2026-09-01 09:22:48
+
+----------------------------------------------------------------------
+DATASET SUMMARY
+----------------------------------------------------------------------
+
+Total authentication events: 1520
+Unique users:                 5
+Unique source IPs:            5
+Unique destination systems:   5
+
+High-risk events (70+):       20
+Medium-risk events (40-69):   0
+Low-risk events (<40):        1500
+
+
+----------------------------------------------------------------------
+HIGH / MEDIUM RISK EVIDENCE
+----------------------------------------------------------------------
+
+          timestamp  user      src_ip dest_computer  logon_type  anomaly_score risk_level  off_hours  rare_ip  unusual_user_ip  rapid_multi_system
+2026-08-28 02:07:00 alice 10.10.20.15         WEB01           3            100       HIGH       True     True             True                True
+2026-08-28 02:07:00 alice 10.10.20.15         APP01           3            100       HIGH       True     True             True                True
+2026-08-28 02:07:00 alice 10.10.20.15        FILE01           3            100       HIGH       True     True             True                True
+2026-08-28 02:07:00 alice 10.10.20.15         WEB01           3            100       HIGH       True     True             True                True
+2026-08-28 02:14:20 alice 10.10.20.15         APP01           3            100       HIGH       True     True             True                True
+2026-08-28 02:13:20 alice 10.10.20.15        FILE01           3            100       HIGH       True     True             True                True
+2026-08-28 02:13:40 alice 10.10.20.15         WEB01           3            100       HIGH       True     True             True                True
+2026-08-28 02:13:00 alice 10.10.20.15          DC01           3            100       HIGH       True     True             True                True
+2026-08-28 02:09:00 alice 10.10.20.15         SQL01           3            100       HIGH       True     True             True                True
+2026-08-28 02:08:00 alice 10.10.20.15        FILE01           3            100       HIGH       True     True             True                True
+2026-08-28 02:14:00 alice 10.10.20.15         SQL01           3            100       HIGH       True     True             True                True
+2026-08-28 02:03:00 alice 10.10.20.15         SQL01           3             80       HIGH       True     True             True               False
+2026-08-28 02:04:00 alice 10.10.20.15         APP01           3             80       HIGH       True     True             True               False
+2026-08-28 02:04:00 alice 10.10.20.15        FILE01           3             80       HIGH       True     True             True               False
+2026-08-28 02:03:00 alice 10.10.20.15        FILE01           3             80       HIGH       True     True             True               False
+2026-08-28 02:04:00 alice 10.10.20.15         APP01           3             80       HIGH       True     True             True               False
+2026-08-28 02:10:00 alice 10.10.20.15         APP01           3             80       HIGH       True     True             True               False
+2026-08-28 02:11:00 alice 10.10.20.15          DC01           3             80       HIGH       True     True             True               False
+2026-08-28 02:11:00 alice 10.10.20.15          DC01           3             80       HIGH       True     True             True               False
+2026-08-28 02:11:00 alice 10.10.20.15          DC01           3             80       HIGH       True     True             True               False
+
+
+----------------------------------------------------------------------
+AI-ASSISTED ANALYSIS
+----------------------------------------------------------------------
+
+FINDING
+
+FACTS:
+- User 'alice' initiated multiple network logons (logon_type 3) from private IP 10.10.20.15 to WEB01, APP01, FILE01, SQL01, and DC01 between 02:03-02:14.
+- All logons occurred during off-hours (off_hours=True), with rare source IP (rare_ip=True) and unusual user/IP relationship (unusual_user_ip=True).
+- Rapid multi-system access (rapid_multi_system=True) and domain controller targeting (DC01) were detected.
+- Anomaly scores are HIGH across all entries.
+
+ANOMALIES
+- Concentrated off-hours activity with no clear operational context.
+- Single source IP accessing multiple systems in a short timeframe.
+- Targeting of domain controller (DC01) which is a common privilege escalation vector.
+
+BENIGN EXPLANATIONS
+- Legitimate scheduled jobs or scripts running under 'alice's account.
+- User working outside normal hours with access to multiple systems.
+- Network maintenance or configuration changes.
+
+MALICIOUS HYPOTHESES
+- Credential compromise allowing lateral movement using 'alice's credentials.
+- Attackers using stolen credentials to pivot between systems.
+- Targeting DC01 for credential dumping or privilege escalation.
+
+MITRE ATT&CK
+- T1078 - Valid Accounts: User 'alice' has legitimate credentials but the pattern of access suggests potential misuse.
+- Needs ATT&CK validation: No specific evidence for T1021 techniques (RDP/SMB) due to lack of protocol confirmation.
+
+CONFIDENCE
+MEDIUM
+
+RECOMMENDED VALIDATION
+1. Verify if 'alice' has legitimate access to all targeted systems.
+2. Check for additional logon events or process creation activity from 10.10.20.15.
+3. Investigate the internal asset associated with 10.10.20.15 (hostname, owner, network segment).
+4. Look for signs of credential compromise in security event logs.
+
+FINAL ASSESSMENT
+Inconclusive but suspicious. The combination of off-hours activity, rapid multi-system access, and domain controller targeting warrants further investigation. No confirmed compromise, but patterns align with potential lateral movement using valid credentials.
+
+
+----------------------------------------------------------------------
+ANALYST NOTES
+----------------------------------------------------------------------
+
+This investigation uses a synthetic authentication dataset.
+
+Anomaly scores are heuristic detection signals and do not represent
+a probability of compromise.
+
+AI-generated conclusions require human validation.
+
+No compromise should be considered confirmed from this dataset alone.
+
+
+----------------------------------------------------------------------
+INVESTIGATION ARTIFACTS
+----------------------------------------------------------------------
+
+authentication_by_hour.png
+authentication_by_ip.png
+alice_authentication_timeline.png
+scored_authentication_logs.csv

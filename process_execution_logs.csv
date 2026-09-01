@@ -1,0 +1,8 @@
+timestamp,host,user,process,command,parent_process,hour,off_hours,powershell,encoded,bypass,hidden,suspicious_path,suspicious_process,anomaly_score,risk_level
+2026-08-28 02:14:55,WS07,alice,powershell.exe,powershell.exe -ExecutionPolicy Bypass -File C:\Users\Public\update.ps1,taskeng.exe,2,True,True,False,True,False,True,True,85,HIGH
+2026-08-28 02:16:05,WS07,alice,powershell.exe,powershell.exe -w hidden -enc SQBFAFgA...,explorer.exe,2,True,True,True,False,True,False,True,80,HIGH
+2026-08-28 02:17:32,WS07,alice,svchost.exe,C:\Users\Public\svchost.exe,services.exe,2,True,False,False,False,False,True,True,45,MEDIUM
+2026-08-28 02:19:47,WS07,alice,chrome_update.exe,C:\Users\Public\chrome_update.exe,taskeng.exe,2,True,False,False,False,False,True,True,45,MEDIUM
+2026-08-25 09:12:15,WS01,david,svchost.exe,C:\Windows\System32\svchost.exe -k netsvcs,services.exe,9,False,False,False,False,False,False,False,0,LOW
+2026-08-25 10:04:38,WS03,bob,MsMpEng.exe,C:\Program Files\Windows Defender\MsMpEng.exe,services.exe,10,False,False,False,False,False,False,False,0,LOW
+2026-08-25 10:21:46,WS04,charlie,backup.exe,C:\Program Files\Backup\backup.exe,services.exe,10,False,False,False,False,False,False,False,0,LOW

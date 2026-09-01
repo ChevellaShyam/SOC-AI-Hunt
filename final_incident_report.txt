@@ -1,0 +1,78 @@
+### 1. EXECUTIVE SUMMARY  
+A series of authentication events and persistence mechanisms were observed between 02:03:00 and 02:19:44 on 2026-08-28. User **alice** authenticated from **10.10.20.15** to multiple hosts (SQL01, FILE01, APP01, WEB01, DC01), with several events flagged at high severity (score ≥ 80). Subsequent persistence mechanisms (Scheduled Task, Registry Run Key, Service) were established on **WS07**. While no confirmed malicious activity is present, the pattern of repeated authentications and persistence mechanisms warrants further investigation.
+
+---
+
+### 2. ATTACK TIMELINE  
+- **02:03:00**: Alice authenticated to SQL01 and FILE01 (score 80).  
+- **02:04:00**: Alice authenticated to FILE01 and APP01 (score 80).  
+- **02:07:00**: Alice authenticated to WEB01, FILE01, and APP01 (score 100).  
+- **02:11:00**: Alice authenticated to DC01 (multiple attempts, score 80).  
+- **02:14:51**: Persistence via Scheduled Task on WS07 (command: `update.ps1`, score 100).  
+- **02:16:02**: Persistence via Registry Run Key on WS07 (command: PowerShell encoded, score 80).  
+- **02:17:29**: Persistence via Service on WS07 (command: `svchost.exe`, score 75).  
+- **02:19:44**: Persistence via Scheduled Task on WS07 (command: `chrome_update.exe`, score 75).  
+
+---
+
+### 3. CONFIRMED FACTS  
+- User **alice** authenticated from **10.10.20.15** to SQL01, FILE01, APP01, WEB01, and DC01.  
+- Authentication events occurred between 02:03:00 and 02:11:00.  
+- Persistence mechanisms (Scheduled Task, Registry Run Key, Service) were established on **WS07**.  
+- All events include **scores** (80–100), but no explicit indicators of exploitation (e.g., command execution, data exfiltration).  
+
+---
+
+### 4. SUSPICIOUS INDICATORS  
+- **Repetitive authentication**: Multiple logins to unrelated systems (SQL01, FILE01, APP01, WEB01, DC01) from the same IP.  
+- **High severity scores**: Authentication events to multiple systems with scores ≥ 80, suggesting potential credential compromise or brute-force attempts.  
+- **Persistence mechanisms**: Multiple persistence techniques (Scheduled Task, Registry Run Key, Service) on the same host (WS07), which is unusual for legitimate operations.  
+- **Command ambiguity**: PowerShell scripts (`update.ps1`, `chrome_update.exe`) and encoded commands may indicate obfuscation or malicious intent.  
+
+---
+
+### 5. POSSIBLE ATTACK CHAIN (HYPOTHESIS)  
+1. **Initial Access**: Attacker compromised user **alice**’s credentials (possibly via credential theft or brute-force) to gain access to the network.  
+2. **Lateral Movement**: Authenticated to multiple systems (SQL01, FILE01, APP01, WEB01, DC01) to establish a foothold.  
+3. **Persistence**: Deployed multiple persistence mechanisms on **WS07** (Scheduled Task, Registry Run Key, Service) to maintain access.  
+4. **Command Execution**: The PowerShell scripts and encoded commands may be used to exfiltrate data, establish a backdoor, or escalate privileges.  
+
+---
+
+### 6. MITRE ATT&CK  
+- **T1078 (Valid Accounts)**: Authentication events to multiple systems suggest credential reuse or compromise.  
+- **T1053 (Scheduled Task)**: Persistence via Scheduled Task on WS07.  
+- **T1037 (Registry Run Key)**: Persistence via Registry Run Key on WS07.  
+- **T1053 (Service)**: Persistence via Service on WS07.  
+
+---
+
+### 7. BENIGN EXPLANATIONS  
+- **Legitimate maintenance**: User **alice** could be performing routine updates or system checks, especially if the commands are part of scheduled maintenance.  
+- **Automated tools**: Authentication events might be triggered by legitimate tools or scripts (e.g., backup processes).  
+- **False positives**: High scores could result from misconfigured security tools or benign activity misclassified as threats.  
+
+---
+
+### 8. CONFIDENCE  
+**MEDIUM**  
+- The pattern of repeated authentications and multiple persistence mechanisms is suspicious but not conclusive.  
+- No direct evidence of command execution or data exfiltration is present.  
+- The user **alice** could have legitimate access, but the scope of systems targeted is atypical.  
+
+---
+
+### 9. RECOMMENDED SOC ACTIONS  
+1. **Verify user access**: Confirm whether **alice** has legitimate access to all targeted systems.  
+2. **Investigate the source IP**: Check **10.10.20.15** for any known malicious activity or misconfiguration.  
+3. **Analyze persistence commands**: Decompile encoded PowerShell commands and inspect `update.ps1`/`chrome_update.exe` for malicious payloads.  
+4. **Check for lateral movement**: Monitor for unusual network traffic or file transfers between systems.  
+5. **Review logs**: Correlate authentication events with other system activity (e.g., process creation, file access).  
+
+---
+
+### 10. FINAL ASSESSMENT  
+**Likely Malicious**  
+- The combination of repeated authentications, high severity scores, and multiple persistence mechanisms strongly suggests a potential compromise.  
+- However, no confirmed malicious activity (e.g., command execution, data exfiltration) is present, so further investigation is required.  
+- This should be treated as **Suspicious** until additional evidence is gathered.

@@ -1,0 +1,10 @@
+timestamp,host,user,mechanism,name,command,hour,off_hours,suspicious_powershell,suspicious_path,mechanism_count,multiple_mechanisms,rapid_persistence,anomaly_score,risk_level
+2026-08-28 09:12:10,WS01,david,Scheduled Task,WindowsUpdateCheck,C:\Windows\System32\svchost.exe -k netsvcs,9,False,False,False,1,False,False,0,LOW
+2026-08-28 09:30:22,WS02,alice,Registry Run Key,OneDrive,"""C:\Program Files\Microsoft OneDrive\OneDrive.exe""",9,False,False,False,1,False,False,0,LOW
+2026-08-28 10:04:33,WS03,bob,Service,Windows Defender Service,C:\Program Files\Windows Defender\MsMpEng.exe,10,False,False,False,1,False,False,0,LOW
+2026-08-28 10:21:41,WS04,charlie,Scheduled Task,BackupTask,C:\Program Files\Backup\backup.exe,10,False,False,False,1,False,False,0,LOW
+2026-08-28 11:15:03,WS05,admin,Service,Print Spooler,C:\Windows\System32\spoolsv.exe,11,False,False,False,1,False,False,0,LOW
+2026-08-28 02:14:51,WS07,alice,Scheduled Task,WindowsSecurityUpdate,powershell.exe -ExecutionPolicy Bypass -File C:\Users\Public\update.ps1,2,True,True,True,3,True,True,100,HIGH
+2026-08-28 02:16:02,WS07,alice,Registry Run Key,WindowsUpdate,powershell.exe -w hidden -enc SQBFAFgA...,2,True,True,False,3,True,True,80,HIGH
+2026-08-28 02:17:29,WS07,alice,Service,WindowsTelemetry,C:\Users\Public\svchost.exe,2,True,False,True,3,True,True,75,HIGH
+2026-08-28 02:19:44,WS07,alice,Scheduled Task,ChromeUpdate,C:\Users\Public\chrome_update.exe,2,True,False,True,3,True,True,75,HIGH

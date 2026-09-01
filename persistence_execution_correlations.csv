@@ -1,0 +1,9 @@
+persistence_time,host,user,mechanism,persistence_name,execution_time,process,command,time_difference_seconds
+2026-08-28 02:14:51,WS07,alice,Scheduled Task,WindowsSecurityUpdate,2026-08-28 02:14:55,powershell.exe,powershell.exe -ExecutionPolicy Bypass -File C:\Users\Public\update.ps1,4
+2026-08-28 02:14:51,WS07,alice,Scheduled Task,WindowsSecurityUpdate,2026-08-28 02:16:05,powershell.exe,powershell.exe -w hidden -enc SQBFAFgA...,74
+2026-08-28 02:16:02,WS07,alice,Registry Run Key,WindowsUpdate,2026-08-28 02:14:55,powershell.exe,powershell.exe -ExecutionPolicy Bypass -File C:\Users\Public\update.ps1,67
+2026-08-28 02:16:02,WS07,alice,Registry Run Key,WindowsUpdate,2026-08-28 02:16:05,powershell.exe,powershell.exe -w hidden -enc SQBFAFgA...,3
+2026-08-28 02:17:29,WS07,alice,Service,WindowsTelemetry,2026-08-28 02:14:55,powershell.exe,powershell.exe -ExecutionPolicy Bypass -File C:\Users\Public\update.ps1,154
+2026-08-28 02:17:29,WS07,alice,Service,WindowsTelemetry,2026-08-28 02:16:05,powershell.exe,powershell.exe -w hidden -enc SQBFAFgA...,84
+2026-08-28 02:19:44,WS07,alice,Scheduled Task,ChromeUpdate,2026-08-28 02:14:55,powershell.exe,powershell.exe -ExecutionPolicy Bypass -File C:\Users\Public\update.ps1,289
+2026-08-28 02:19:44,WS07,alice,Scheduled Task,ChromeUpdate,2026-08-28 02:16:05,powershell.exe,powershell.exe -w hidden -enc SQBFAFgA...,219

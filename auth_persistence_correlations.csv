@@ -1,0 +1,81 @@
+auth_time,auth_user,src_ip,destination,persistence_time,host,mechanism,persistence_name,time_difference_seconds
+2026-08-28 02:03:00,alice,10.10.20.15,SQL01,2026-08-28 02:14:51,WS07,Scheduled Task,WindowsSecurityUpdate,711
+2026-08-28 02:03:00,alice,10.10.20.15,SQL01,2026-08-28 02:16:02,WS07,Registry Run Key,WindowsUpdate,782
+2026-08-28 02:03:00,alice,10.10.20.15,SQL01,2026-08-28 02:17:29,WS07,Service,WindowsTelemetry,869
+2026-08-28 02:03:00,alice,10.10.20.15,SQL01,2026-08-28 02:19:44,WS07,Scheduled Task,ChromeUpdate,1004
+2026-08-28 02:03:00,alice,10.10.20.15,FILE01,2026-08-28 02:14:51,WS07,Scheduled Task,WindowsSecurityUpdate,711
+2026-08-28 02:03:00,alice,10.10.20.15,FILE01,2026-08-28 02:16:02,WS07,Registry Run Key,WindowsUpdate,782
+2026-08-28 02:03:00,alice,10.10.20.15,FILE01,2026-08-28 02:17:29,WS07,Service,WindowsTelemetry,869
+2026-08-28 02:03:00,alice,10.10.20.15,FILE01,2026-08-28 02:19:44,WS07,Scheduled Task,ChromeUpdate,1004
+2026-08-28 02:04:00,alice,10.10.20.15,FILE01,2026-08-28 02:14:51,WS07,Scheduled Task,WindowsSecurityUpdate,651
+2026-08-28 02:04:00,alice,10.10.20.15,FILE01,2026-08-28 02:16:02,WS07,Registry Run Key,WindowsUpdate,722
+2026-08-28 02:04:00,alice,10.10.20.15,FILE01,2026-08-28 02:17:29,WS07,Service,WindowsTelemetry,809
+2026-08-28 02:04:00,alice,10.10.20.15,FILE01,2026-08-28 02:19:44,WS07,Scheduled Task,ChromeUpdate,944
+2026-08-28 02:04:00,alice,10.10.20.15,APP01,2026-08-28 02:14:51,WS07,Scheduled Task,WindowsSecurityUpdate,651
+2026-08-28 02:04:00,alice,10.10.20.15,APP01,2026-08-28 02:16:02,WS07,Registry Run Key,WindowsUpdate,722
+2026-08-28 02:04:00,alice,10.10.20.15,APP01,2026-08-28 02:17:29,WS07,Service,WindowsTelemetry,809
+2026-08-28 02:04:00,alice,10.10.20.15,APP01,2026-08-28 02:19:44,WS07,Scheduled Task,ChromeUpdate,944
+2026-08-28 02:04:00,alice,10.10.20.15,APP01,2026-08-28 02:14:51,WS07,Scheduled Task,WindowsSecurityUpdate,651
+2026-08-28 02:04:00,alice,10.10.20.15,APP01,2026-08-28 02:16:02,WS07,Registry Run Key,WindowsUpdate,722
+2026-08-28 02:04:00,alice,10.10.20.15,APP01,2026-08-28 02:17:29,WS07,Service,WindowsTelemetry,809
+2026-08-28 02:04:00,alice,10.10.20.15,APP01,2026-08-28 02:19:44,WS07,Scheduled Task,ChromeUpdate,944
+2026-08-28 02:07:00,alice,10.10.20.15,WEB01,2026-08-28 02:14:51,WS07,Scheduled Task,WindowsSecurityUpdate,471
+2026-08-28 02:07:00,alice,10.10.20.15,WEB01,2026-08-28 02:16:02,WS07,Registry Run Key,WindowsUpdate,542
+2026-08-28 02:07:00,alice,10.10.20.15,WEB01,2026-08-28 02:17:29,WS07,Service,WindowsTelemetry,629
+2026-08-28 02:07:00,alice,10.10.20.15,WEB01,2026-08-28 02:19:44,WS07,Scheduled Task,ChromeUpdate,764
+2026-08-28 02:07:00,alice,10.10.20.15,FILE01,2026-08-28 02:14:51,WS07,Scheduled Task,WindowsSecurityUpdate,471
+2026-08-28 02:07:00,alice,10.10.20.15,FILE01,2026-08-28 02:16:02,WS07,Registry Run Key,WindowsUpdate,542
+2026-08-28 02:07:00,alice,10.10.20.15,FILE01,2026-08-28 02:17:29,WS07,Service,WindowsTelemetry,629
+2026-08-28 02:07:00,alice,10.10.20.15,FILE01,2026-08-28 02:19:44,WS07,Scheduled Task,ChromeUpdate,764
+2026-08-28 02:07:00,alice,10.10.20.15,APP01,2026-08-28 02:14:51,WS07,Scheduled Task,WindowsSecurityUpdate,471
+2026-08-28 02:07:00,alice,10.10.20.15,APP01,2026-08-28 02:16:02,WS07,Registry Run Key,WindowsUpdate,542
+2026-08-28 02:07:00,alice,10.10.20.15,APP01,2026-08-28 02:17:29,WS07,Service,WindowsTelemetry,629
+2026-08-28 02:07:00,alice,10.10.20.15,APP01,2026-08-28 02:19:44,WS07,Scheduled Task,ChromeUpdate,764
+2026-08-28 02:07:00,alice,10.10.20.15,WEB01,2026-08-28 02:14:51,WS07,Scheduled Task,WindowsSecurityUpdate,471
+2026-08-28 02:07:00,alice,10.10.20.15,WEB01,2026-08-28 02:16:02,WS07,Registry Run Key,WindowsUpdate,542
+2026-08-28 02:07:00,alice,10.10.20.15,WEB01,2026-08-28 02:17:29,WS07,Service,WindowsTelemetry,629
+2026-08-28 02:07:00,alice,10.10.20.15,WEB01,2026-08-28 02:19:44,WS07,Scheduled Task,ChromeUpdate,764
+2026-08-28 02:08:00,alice,10.10.20.15,FILE01,2026-08-28 02:14:51,WS07,Scheduled Task,WindowsSecurityUpdate,411
+2026-08-28 02:08:00,alice,10.10.20.15,FILE01,2026-08-28 02:16:02,WS07,Registry Run Key,WindowsUpdate,482
+2026-08-28 02:08:00,alice,10.10.20.15,FILE01,2026-08-28 02:17:29,WS07,Service,WindowsTelemetry,569
+2026-08-28 02:08:00,alice,10.10.20.15,FILE01,2026-08-28 02:19:44,WS07,Scheduled Task,ChromeUpdate,704
+2026-08-28 02:09:00,alice,10.10.20.15,SQL01,2026-08-28 02:14:51,WS07,Scheduled Task,WindowsSecurityUpdate,351
+2026-08-28 02:09:00,alice,10.10.20.15,SQL01,2026-08-28 02:16:02,WS07,Registry Run Key,WindowsUpdate,422
+2026-08-28 02:09:00,alice,10.10.20.15,SQL01,2026-08-28 02:17:29,WS07,Service,WindowsTelemetry,509
+2026-08-28 02:09:00,alice,10.10.20.15,SQL01,2026-08-28 02:19:44,WS07,Scheduled Task,ChromeUpdate,644
+2026-08-28 02:10:00,alice,10.10.20.15,APP01,2026-08-28 02:14:51,WS07,Scheduled Task,WindowsSecurityUpdate,291
+2026-08-28 02:10:00,alice,10.10.20.15,APP01,2026-08-28 02:16:02,WS07,Registry Run Key,WindowsUpdate,362
+2026-08-28 02:10:00,alice,10.10.20.15,APP01,2026-08-28 02:17:29,WS07,Service,WindowsTelemetry,449
+2026-08-28 02:10:00,alice,10.10.20.15,APP01,2026-08-28 02:19:44,WS07,Scheduled Task,ChromeUpdate,584
+2026-08-28 02:11:00,alice,10.10.20.15,DC01,2026-08-28 02:14:51,WS07,Scheduled Task,WindowsSecurityUpdate,231
+2026-08-28 02:11:00,alice,10.10.20.15,DC01,2026-08-28 02:16:02,WS07,Registry Run Key,WindowsUpdate,302
+2026-08-28 02:11:00,alice,10.10.20.15,DC01,2026-08-28 02:17:29,WS07,Service,WindowsTelemetry,389
+2026-08-28 02:11:00,alice,10.10.20.15,DC01,2026-08-28 02:19:44,WS07,Scheduled Task,ChromeUpdate,524
+2026-08-28 02:11:00,alice,10.10.20.15,DC01,2026-08-28 02:14:51,WS07,Scheduled Task,WindowsSecurityUpdate,231
+2026-08-28 02:11:00,alice,10.10.20.15,DC01,2026-08-28 02:16:02,WS07,Registry Run Key,WindowsUpdate,302
+2026-08-28 02:11:00,alice,10.10.20.15,DC01,2026-08-28 02:17:29,WS07,Service,WindowsTelemetry,389
+2026-08-28 02:11:00,alice,10.10.20.15,DC01,2026-08-28 02:19:44,WS07,Scheduled Task,ChromeUpdate,524
+2026-08-28 02:11:00,alice,10.10.20.15,DC01,2026-08-28 02:14:51,WS07,Scheduled Task,WindowsSecurityUpdate,231
+2026-08-28 02:11:00,alice,10.10.20.15,DC01,2026-08-28 02:16:02,WS07,Registry Run Key,WindowsUpdate,302
+2026-08-28 02:11:00,alice,10.10.20.15,DC01,2026-08-28 02:17:29,WS07,Service,WindowsTelemetry,389
+2026-08-28 02:11:00,alice,10.10.20.15,DC01,2026-08-28 02:19:44,WS07,Scheduled Task,ChromeUpdate,524
+2026-08-28 02:13:00,alice,10.10.20.15,DC01,2026-08-28 02:14:51,WS07,Scheduled Task,WindowsSecurityUpdate,111
+2026-08-28 02:13:00,alice,10.10.20.15,DC01,2026-08-28 02:16:02,WS07,Registry Run Key,WindowsUpdate,182
+2026-08-28 02:13:00,alice,10.10.20.15,DC01,2026-08-28 02:17:29,WS07,Service,WindowsTelemetry,269
+2026-08-28 02:13:00,alice,10.10.20.15,DC01,2026-08-28 02:19:44,WS07,Scheduled Task,ChromeUpdate,404
+2026-08-28 02:13:20,alice,10.10.20.15,FILE01,2026-08-28 02:14:51,WS07,Scheduled Task,WindowsSecurityUpdate,91
+2026-08-28 02:13:20,alice,10.10.20.15,FILE01,2026-08-28 02:16:02,WS07,Registry Run Key,WindowsUpdate,162
+2026-08-28 02:13:20,alice,10.10.20.15,FILE01,2026-08-28 02:17:29,WS07,Service,WindowsTelemetry,249
+2026-08-28 02:13:20,alice,10.10.20.15,FILE01,2026-08-28 02:19:44,WS07,Scheduled Task,ChromeUpdate,384
+2026-08-28 02:13:40,alice,10.10.20.15,WEB01,2026-08-28 02:14:51,WS07,Scheduled Task,WindowsSecurityUpdate,71
+2026-08-28 02:13:40,alice,10.10.20.15,WEB01,2026-08-28 02:16:02,WS07,Registry Run Key,WindowsUpdate,142
+2026-08-28 02:13:40,alice,10.10.20.15,WEB01,2026-08-28 02:17:29,WS07,Service,WindowsTelemetry,229
+2026-08-28 02:13:40,alice,10.10.20.15,WEB01,2026-08-28 02:19:44,WS07,Scheduled Task,ChromeUpdate,364
+2026-08-28 02:14:00,alice,10.10.20.15,SQL01,2026-08-28 02:14:51,WS07,Scheduled Task,WindowsSecurityUpdate,51
+2026-08-28 02:14:00,alice,10.10.20.15,SQL01,2026-08-28 02:16:02,WS07,Registry Run Key,WindowsUpdate,122
+2026-08-28 02:14:00,alice,10.10.20.15,SQL01,2026-08-28 02:17:29,WS07,Service,WindowsTelemetry,209
+2026-08-28 02:14:00,alice,10.10.20.15,SQL01,2026-08-28 02:19:44,WS07,Scheduled Task,ChromeUpdate,344
+2026-08-28 02:14:20,alice,10.10.20.15,APP01,2026-08-28 02:14:51,WS07,Scheduled Task,WindowsSecurityUpdate,31
+2026-08-28 02:14:20,alice,10.10.20.15,APP01,2026-08-28 02:16:02,WS07,Registry Run Key,WindowsUpdate,102
+2026-08-28 02:14:20,alice,10.10.20.15,APP01,2026-08-28 02:17:29,WS07,Service,WindowsTelemetry,189
+2026-08-28 02:14:20,alice,10.10.20.15,APP01,2026-08-28 02:19:44,WS07,Scheduled Task,ChromeUpdate,324
